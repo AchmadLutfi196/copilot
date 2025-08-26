@@ -1,0 +1,256 @@
+\documentclass[10pt,a4paper]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage[bahasa]{babel} % Indonesian language support
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% Page setup
+\geometry{
+    a4paper,
+    left=3cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Line spacing
+\onehalfspacing
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont Kajian Pustaka Sistem Pendukung Keputusan}
+\fancyhead[R]{\fontsize{9}{11}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Title formatting
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Table of contents formatting
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black,
+    pdftitle={Kajian Pustaka Sistem Pendukung Keputusan untuk Bantuan Pendidikan},
+    pdfauthor={Nama Mahasiswa},
+    pdfsubject={Literature Review},
+    pdfkeywords={Sistem Pendukung Keputusan, Bantuan Pendidikan, SAW, Neural Network}
+}
+
+% Document information
+\title{
+    \vspace{-2cm}
+    \Huge\textbf{KAJIAN PUSTAKA}\\
+    \vspace{0.5cm}
+    \Large\textbf{SISTEM PENDUKUNG KEPUTUSAN}\\
+    \Large\textbf{UNTUK BANTUAN PENDIDIKAN}\\
+    \vspace{1cm}
+    \normalsize\textit{Literature Review on Decision Support Systems for Educational Aid}
+}
+
+\author{
+    \textbf{[Nama Mahasiswa]}\\
+    \textbf{[NIM]}\\
+    \vspace{0.5cm}
+    \textbf{Program Studi [Nama Program Studi]}\\
+    \textbf{Fakultas [Nama Fakultas]}\\
+    \textbf{Universitas [Nama Universitas]}\\
+    \vspace{1cm}
+    \today
+}
+
+\date{}
+
+\begin{document}
+
+% Title page
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% Table of contents
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% Start page numbering
+\setcounter{page}{1}
+
+% Introduction section
+\section{PENDAHULUAN}
+
+Sistem pendukung keputusan (Decision Support System/DSS) merupakan sistem informasi yang dirancang untuk membantu dalam proses pengambilan keputusan yang kompleks dan tidak terstruktur. Dalam konteks pendidikan, sistem pendukung keputusan sangat penting untuk menentukan kelayakan penerima bantuan pendidikan atau beasiswa secara objektif dan transparan.
+
+Kajian pustaka ini menganalisis dua penelitian terkait sistem pendukung keputusan untuk bantuan pendidikan yang menggunakan pendekatan metodologi yang berbeda. Penelitian pertama menggunakan metode Simple Additive Weighting (SAW), sedangkan penelitian kedua menggunakan metode Neural Network. Analisis komparatif ini bertujuan untuk memahami kelebihan dan kekurangan masing-masing pendekatan dalam menyelesaikan permasalahan penentuan penerima bantuan pendidikan.
+
+% Paper 1 Section
+\section{KAJIAN PAPER 1: METODE SIMPLE ADDITIVE WEIGHTING}
+
+\subsection{Metode yang Digunakan}
+
+[Jelaskan metode Simple Additive Weighting (SAW) yang digunakan dalam penelitian. Berikan penjelasan tentang algoritma, proses perhitungan, dan tahapan implementasi metode SAW dalam konteks penentuan kelayakan penerima bantuan pendidikan.]
+
+\subsection{Dataset yang Digunakan}
+
+[Deskripsikan dataset yang digunakan dalam penelitian, termasuk:
+\begin{itemize}
+    \item Jumlah dan karakteristik sampel data
+    \item Kriteria-kriteria yang digunakan untuk penilaian
+    \item Bobot masing-masing kriteria
+    \item Sumber data dan metode pengumpulan data
+\end{itemize}]
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+[Ringkas hasil eksperimen dan analisis yang diperoleh dari penelitian, meliputi:
+\begin{itemize}
+    \item Hasil implementasi sistem
+    \item Tingkat akurasi atau efektivitas sistem
+    \item Perbandingan dengan metode manual (jika ada)
+    \item Analisis performa sistem
+\end{itemize}]
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item [Tuliskan kelebihan-kelebihan dari penggunaan metode SAW dalam penelitian ini]
+    \item [Kemudahan implementasi]
+    \item [Transparansi proses pengambilan keputusan]
+    \item [Dan lain-lain...]
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item [Tuliskan kekurangan-kekurangan yang ditemukan dalam penelitian]
+    \item [Keterbatasan metode]
+    \item [Masalah yang masih perlu diatasi]
+    \item [Dan lain-lain...]
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+[Tuliskan dan analisis referensi-referensi utama yang digunakan dalam paper ini, termasuk relevansinya dengan topik penelitian.]
+
+% Paper 2 Section
+\section{KAJIAN PAPER 2: METODE NEURAL NETWORK}
+
+\subsection{Metode yang Digunakan}
+
+[Jelaskan metode Neural Network yang digunakan dalam penelitian. Berikan penjelasan tentang:
+\begin{itemize}
+    \item Arsitektur neural network yang digunakan
+    \item Algoritma pembelajaran (training algorithm)
+    \item Fungsi aktivasi
+    \item Proses training dan testing
+\end{itemize}]
+
+\subsection{Dataset yang Digunakan}
+
+[Deskripsikan dataset yang digunakan dalam penelitian, termasuk:
+\begin{itemize}
+    \item Karakteristik dan ukuran dataset
+    \item Preprocessing data yang dilakukan
+    \item Pembagian data training dan testing
+    \item Fitur-fitur input yang digunakan
+\end{itemize}]
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+[Ringkas hasil eksperimen dan analisis yang diperoleh dari penelitian, meliputi:
+\begin{itemize}
+    \item Hasil training neural network
+    \item Tingkat akurasi prediksi
+    \item Analisis confusion matrix (jika ada)
+    \item Perbandingan performa dengan metode lain
+\end{itemize}]
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item [Tuliskan kelebihan-kelebihan dari penggunaan metode Neural Network dalam penelitian ini]
+    \item [Kemampuan menangani pola kompleks]
+    \item [Akurasi prediksi yang tinggi]
+    \item [Dan lain-lain...]
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item [Tuliskan kekurangan-kekurangan yang ditemukan dalam penelitian]
+    \item [Kompleksitas implementasi]
+    \item [Kebutuhan data training yang besar]
+    \item [Dan lain-lain...]
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+[Tuliskan dan analisis referensi-referensi utama yang digunakan dalam paper ini, termasuk relevansinya dengan topik penelitian.]
+
+% Comparative Analysis
+\section{ANALISIS KOMPARATIF}
+
+\subsection{Perbandingan Metodologi}
+
+[Bandingkan kedua metode yang digunakan dalam penelitian, meliputi:
+\begin{itemize}
+    \item Kompleksitas implementasi
+    \item Kebutuhan data dan preprocessing
+    \item Transparansi proses pengambilan keputusan
+    \item Akurasi dan reliabilitas hasil
+\end{itemize}]
+
+\subsection{Kesesuaian Konteks Aplikasi}
+
+[Analisis kesesuaian masing-masing metode untuk konteks penentuan penerima bantuan pendidikan, termasuk faktor-faktor seperti:
+\begin{itemize}
+    \item Kemudahan penggunaan bagi stakeholder
+    \item Kebutuhan interpretabilitas hasil
+    \item Skalabilitas sistem
+    \item Maintenance dan update sistem
+\end{itemize}]
+
+% Conclusion
+\section{KESIMPULAN}
+
+[Tuliskan kesimpulan dari kajian pustaka ini, meliputi:
+\begin{itemize}
+    \item Ringkasan temuan utama dari kedua penelitian
+    \item Perbandingan efektivitas kedua metode
+    \item Rekomendasi penggunaan metode berdasarkan konteks aplikasi
+    \item Saran untuk penelitian lanjutan
+\end{itemize}]
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

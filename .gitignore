@@ -1,0 +1,38 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+
+# LaTeX output files (optional - remove this line if you want to include PDFs)
+*.pdf
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*~
+*.tmp
+*.temp
+
+# Editor backup files
+*.bak
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
