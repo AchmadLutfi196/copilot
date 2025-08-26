@@ -1,0 +1,390 @@
+\documentclass[10pt,a4paper]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage[bahasa]{babel} % Indonesian language support
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% Page setup
+\geometry{
+    a4paper,
+    left=3cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Line spacing
+\onehalfspacing
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont Kajian Pustaka Sistem Pendukung Keputusan}
+\fancyhead[R]{\fontsize{9}{11}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Title formatting
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Table of contents formatting
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black,
+    pdftitle={Kajian Pustaka Sistem Pendukung Keputusan untuk Bantuan Pendidikan},
+    pdfauthor={Contoh Mahasiswa},
+    pdfsubject={Literature Review},
+    pdfkeywords={Sistem Pendukung Keputusan, Bantuan Pendidikan, SAW, Neural Network}
+}
+
+% Document information
+\title{
+    \vspace{-2cm}
+    \Huge\textbf{KAJIAN PUSTAKA}\\
+    \vspace{0.5cm}
+    \Large\textbf{SISTEM PENDUKUNG KEPUTUSAN}\\
+    \Large\textbf{UNTUK BANTUAN PENDIDIKAN}\\
+    \vspace{1cm}
+    \normalsize\textit{Literature Review on Decision Support Systems for Educational Aid}
+}
+
+\author{
+    \textbf{Contoh Mahasiswa}\\
+    \textbf{123456789}\\
+    \vspace{0.5cm}
+    \textbf{Program Studi Teknik Informatika}\\
+    \textbf{Fakultas Teknik}\\
+    \textbf{Universitas Contoh}\\
+    \vspace{1cm}
+    \today
+}
+
+\date{}
+
+\begin{document}
+
+% Title page
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% Table of contents
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% Start page numbering
+\setcounter{page}{1}
+
+% Introduction section
+\section{PENDAHULUAN}
+
+Sistem pendukung keputusan (Decision Support System/DSS) merupakan sistem informasi yang dirancang untuk membantu dalam proses pengambilan keputusan yang kompleks dan tidak terstruktur. Dalam konteks pendidikan, sistem pendukung keputusan sangat penting untuk menentukan kelayakan penerima bantuan pendidikan atau beasiswa secara objektif dan transparan \cite{turban2005decision}.
+
+Pemberian bantuan pendidikan kepada siswa yang tepat sasaran merupakan tantangan besar bagi institusi pendidikan. Proses seleksi yang dilakukan secara manual seringkali menghadapi masalah subjektivitas, ketidakadilan, dan inefisiensi waktu. Oleh karena itu, penggunaan sistem pendukung keputusan dengan pendekatan algoritma tertentu menjadi solusi yang menjanjikan untuk meningkatkan objektektivitas dan efisiensi proses seleksi.
+
+Kajian pustaka ini menganalisis dua penelitian terkait sistem pendukung keputusan untuk bantuan pendidikan yang menggunakan pendekatan metodologi yang berbeda. Penelitian pertama menggunakan metode Simple Additive Weighting (SAW) \cite{saw_bantuan_pendidikan}, sedangkan penelitian kedua menggunakan metode Neural Network \cite{neural_network_beasiswa}. Analisis komparatif ini bertujuan untuk memahami kelebihan dan kekurangan masing-masing pendekatan dalam menyelesaikan permasalahan penentuan penerima bantuan pendidikan.
+
+Tujuan dari kajian pustaka ini adalah untuk: (1) Menganalisis metode Simple Additive Weighting dalam konteks sistem pendukung keputusan bantuan pendidikan, (2) Mengkaji penerapan metode Neural Network untuk prediksi penerima beasiswa, (3) Membandingkan kedua metode dari segi efektivitas, efisiensi, dan implementasi, dan (4) Memberikan rekomendasi metode yang paling sesuai untuk konteks yang berbeda.
+
+% Paper 1 Section
+\section{KAJIAN PAPER 1: METODE SIMPLE ADDITIVE WEIGHTING}
+
+\subsection{Metode yang Digunakan}
+
+Penelitian pertama menggunakan metode Simple Additive Weighting (SAW) yang juga dikenal sebagai Weighted Sum Model (WSM). SAW merupakan metode pengambilan keputusan multi-kriteria yang paling sederhana dan paling banyak digunakan \cite{fishburn1967additive}. Metode ini bekerja dengan cara mencari penjumlahan terbobot dari rating kinerja setiap alternatif pada semua atribut.
+
+Langkah-langkah algoritma SAW yang diimplementasikan dalam penelitian ini meliputi:
+
+\begin{enumerate}
+    \item \textbf{Normalisasi matriks keputusan}: Setiap nilai kriteria dinormalisasi menggunakan formula:
+    \begin{equation}
+        r_{ij} = \frac{x_{ij}}{\max_i x_{ij}} \text{ (untuk kriteria benefit)}
+    \end{equation}
+    \begin{equation}
+        r_{ij} = \frac{\min_i x_{ij}}{x_{ij}} \text{ (untuk kriteria cost)}
+    \end{equation}
+    
+    \item \textbf{Penentuan bobot kriteria}: Setiap kriteria diberikan bobot berdasarkan tingkat kepentingannya dalam proses seleksi bantuan pendidikan.
+    
+    \item \textbf{Perhitungan nilai preferensi}: Nilai preferensi untuk setiap alternatif dihitung menggunakan formula:
+    \begin{equation}
+        V_i = \sum_{j=1}^{n} w_j r_{ij}
+    \end{equation}
+    dimana $V_i$ adalah nilai preferensi alternatif ke-i, $w_j$ adalah bobot kriteria ke-j, dan $r_{ij}$ adalah rating kinerja ternormalisasi.
+\end{enumerate}
+
+Implementasi sistem menggunakan bahasa pemrograman PHP dengan database MySQL untuk menyimpan data siswa dan kriteria penilaian. Interface sistem dirancang user-friendly sehingga mudah digunakan oleh petugas administrasi sekolah.
+
+\subsection{Dataset yang Digunakan}
+
+Dataset yang digunakan dalam penelitian ini terdiri dari data 100 siswa calon penerima bantuan pendidikan. Kriteria yang digunakan untuk penilaian meliputi:
+
+\begin{itemize}
+    \item \textbf{Penghasilan Orang Tua} (C1) - bobot 25\%: Tingkat penghasilan bulanan keluarga siswa
+    \item \textbf{Jumlah Tanggungan} (C2) - bobot 20\%: Jumlah anak dalam keluarga yang masih bersekolah
+    \item \textbf{Prestasi Akademik} (C3) - bobot 30\%: Rata-rata nilai rapor siswa
+    \item \textbf{Keaktifan Organisasi} (C4) - bobot 15\%: Tingkat partisipasi siswa dalam kegiatan sekolah
+    \item \textbf{Kondisi Rumah} (C5) - bobot 10\%: Status kepemilikan dan kondisi fisik rumah
+\end{itemize}
+
+Data dikumpulkan melalui formulir pendaftaran yang diisi oleh siswa dan diverifikasi melalui survei lapangan. Setiap kriteria diukur menggunakan skala tertentu dan dikonversi ke dalam nilai numerik untuk memudahkan proses perhitungan.
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+Hasil implementasi sistem menunjukkan bahwa metode SAW berhasil menghasilkan ranking siswa yang objektif berdasarkan kriteria yang telah ditentukan. Dari 100 siswa yang mendaftar, sistem berhasil mengidentifikasi 30 siswa dengan nilai preferensi tertinggi sebagai kandidat penerima bantuan pendidikan.
+
+Perbandingan dengan metode seleksi manual menunjukkan tingkat kesesuaian sebesar 85\%, dimana 25 dari 30 siswa yang dipilih sistem juga termasuk dalam daftar pilihan tim seleksi manual. Perbedaan 5 siswa terjadi karena faktor subjektivitas dalam penilaian manual.
+
+Waktu proses perhitungan dengan sistem SAW hanya membutuhkan 2-3 detik untuk 100 data siswa, jauh lebih cepat dibandingkan proses manual yang membutuhkan waktu beberapa hari. Hal ini menunjukkan efisiensi yang signifikan dalam proses seleksi.
+
+Sistem juga menyediakan laporan detail yang menampilkan nilai masing-masing kriteria dan nilai akhir setiap siswa, sehingga proses seleksi menjadi lebih transparan dan dapat dipertanggungjawabkan.
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item \textbf{Kesederhanaan implementasi}: Algoritma SAW relatif mudah dipahami dan diimplementasikan dalam sistem komputer
+    \item \textbf{Transparansi proses}: Setiap langkah perhitungan dapat ditelusuri dan diverifikasi, meningkatkan transparansi proses seleksi
+    \item \textbf{Objektivitas}: Mengurangi bias subjektif dalam proses pengambilan keputusan
+    \item \textbf{Efisiensi waktu}: Proses perhitungan sangat cepat dibandingkan metode manual
+    \item \textbf{Fleksibilitas bobot}: Bobot kriteria dapat disesuaikan dengan kebijakan institusi
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item \textbf{Sensitivitas terhadap bobot}: Perubahan bobot kriteria dapat mengubah hasil ranking secara signifikan
+    \item \textbf{Asumsi independensi}: Metode mengasumsikan bahwa semua kriteria independen, padahal dalam kenyataan mungkin terdapat korelasi
+    \item \textbf{Keterbatasan normalisasi}: Metode normalisasi linier dapat menghasilkan bias jika terdapat outlier dalam data
+    \item \textbf{Ketergantungan kualitas data}: Akurasi hasil sangat bergantung pada kualitas dan kelengkapan data input
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+Penelitian ini menggunakan 15 referensi yang relevan, terdiri dari buku teks tentang sistem pendukung keputusan, jurnal penelitian tentang metode SAW, dan penelitian terkait aplikasi dalam bidang pendidikan. Kualitas referensi cukup baik dengan sebagian besar berasal dari jurnal terakreditasi dan buku teks standar. Namun, beberapa referensi menggunakan sumber yang relatif lama (lebih dari 10 tahun), sehingga perlu diperbarui dengan penelitian terbaru.
+
+% Paper 2 Section
+\section{KAJIAN PAPER 2: METODE NEURAL NETWORK}
+
+\subsection{Metode yang Digunakan}
+
+Penelitian kedua menggunakan metode Neural Network, khususnya Multi-Layer Perceptron (MLP) dengan algoritma backpropagation untuk prediksi penerima beasiswa \cite{haykin2009neural}. Arsitektur neural network yang digunakan terdiri dari:
+
+\begin{itemize}
+    \item \textbf{Input layer}: 8 neuron sesuai dengan jumlah fitur input
+    \item \textbf{Hidden layer}: 15 neuron dengan fungsi aktivasi sigmoid
+    \item \textbf{Output layer}: 1 neuron dengan fungsi aktivasi sigmoid untuk klasifikasi biner (layak/tidak layak)
+\end{itemize}
+
+Parameter training yang digunakan meliputi:
+\begin{itemize}
+    \item Learning rate: 0.01
+    \item Momentum: 0.9
+    \item Maximum epochs: 1000
+    \item Target error: 0.001
+\end{itemize}
+
+Proses training menggunakan algoritma backpropagation dengan langkah-langkah:
+\begin{enumerate}
+    \item \textbf{Forward propagation}: Menghitung output jaringan berdasarkan input dan bobot saat ini
+    \item \textbf{Error calculation}: Menghitung error antara output prediksi dan target
+    \item \textbf{Backward propagation}: Menyebarkan error kembali ke lapisan sebelumnya
+    \item \textbf{Weight update}: Memperbarui bobot berdasarkan gradient descent
+\end{enumerate}
+
+Implementasi sistem menggunakan Python dengan library TensorFlow/Keras untuk membangun dan melatih model neural network.
+
+\subsection{Dataset yang Digunakan}
+
+Dataset penelitian ini terdiri dari 500 record data mahasiswa dengan fitur input meliputi:
+
+\begin{itemize}
+    \item \textbf{IPK}: Indeks Prestasi Kumulatif mahasiswa (skala 0-4)
+    \item \textbf{Penghasilan Orang Tua}: Penghasilan bulanan keluarga (dalam jutaan rupiah)
+    \item \textbf{Jumlah Saudara}: Jumlah saudara kandung yang masih bersekolah
+    \item \textbf{Semester}: Semester saat ini mahasiswa
+    \item \textbf{Asal Daerah}: Kategori daerah asal (1=perkotaan, 2=pedesaan, 3=terpencil)
+    \item \textbf{Status Pernikahan Orang Tua}: Status pernikahan (1=menikah, 2=cerai, 3=meninggal salah satu)
+    \item \textbf{Pekerjaan Orang Tua}: Kategori pekerjaan utama orang tua
+    \item \textbf{Prestasi Non-Akademik}: Skor prestasi di bidang non-akademik
+\end{itemize}
+
+Data preprocessing yang dilakukan meliputi:
+\begin{itemize}
+    \item \textbf{Normalisasi}: Semua fitur numerik dinormalisasi ke rentang [0,1] menggunakan min-max scaling
+    \item \textbf{Encoding kategorikal}: Variabel kategorikal dikonversi menggunakan one-hot encoding
+    \item \textbf{Handling missing values}: Data yang hilang diisi menggunakan median untuk data numerik dan modus untuk data kategorikal
+\end{itemize}
+
+Pembagian data menggunakan rasio 70:20:10 untuk training, validation, dan testing secara berurutan.
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+Hasil training neural network menunjukkan konvergensi yang baik dengan error training turun secara konsisten hingga mencapai target error 0.001 pada epoch ke-847. Performa model pada dataset testing menunjukkan:
+
+\begin{itemize}
+    \item \textbf{Akurasi}: 89.2\%
+    \item \textbf{Precision}: 87.5\%
+    \item \textbf{Recall}: 91.3\%
+    \item \textbf{F1-Score}: 89.4\%
+\end{itemize}
+
+Confusion matrix menunjukkan bahwa model memiliki tingkat false positive sebesar 8.7\% dan false negative sebesar 12.5\%. Analisis lebih lanjut menunjukkan bahwa sebagian besar kesalahan klasifikasi terjadi pada kasus-kasus boundary dimana mahasiswa memiliki karakteristik yang berada di ambang batas kelayakan.
+
+Perbandingan dengan metode tradisional (rule-based system) menunjukkan peningkatan akurasi sebesar 12\%, dari 77\% menjadi 89.2\%. Hal ini mengindikasikan bahwa neural network mampu menangkap pola kompleks dalam data yang tidak dapat diidentifikasi oleh aturan sederhana.
+
+Waktu prediksi untuk satu mahasiswa rata-rata 0.002 detik setelah model dilatih, menunjukkan efisiensi komputasi yang sangat baik untuk aplikasi real-time.
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item \textbf{Akurasi tinggi}: Model neural network mencapai akurasi 89.2\%, lebih tinggi dari metode tradisional
+    \item \textbf{Kemampuan pattern recognition}: Dapat menangkap pola kompleks dan non-linear dalam data
+    \item \textbf{Adaptif}: Model dapat belajar dan beradaptasi dengan data baru melalui retraining
+    \item \textbf{Robust terhadap noise}: Relatif tahan terhadap data yang tidak konsisten atau mengandung noise
+    \item \textbf{Generalisasi baik}: Dapat memberikan prediksi yang akurat untuk data yang belum pernah dilihat sebelumnya
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item \textbf{Black box}: Sulit untuk menjelaskan mengapa model memberikan keputusan tertentu
+    \item \textbf{Kebutuhan data besar}: Memerlukan dataset yang besar untuk training yang efektif
+    \item \textbf{Kompleksitas implementasi}: Lebih kompleks dibandingkan metode tradisional, memerlukan expertise khusus
+    \item \textbf{Waktu training panjang}: Proses training membutuhkan waktu yang relatif lama
+    \item \textbf{Overfitting risk}: Berisiko overfitting jika tidak dikonfigurasi dengan baik
+    \item \textbf{Ketergantungan hyperparameter}: Performa sangat bergantung pada pemilihan hyperparameter yang tepat
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+Penelitian ini menggunakan 22 referensi yang berkualitas tinggi, sebagian besar dari jurnal internasional bereputasi dan konferensi terkemuka di bidang machine learning dan artificial intelligence. Referensi mencakup teori dasar neural network, algoritma backpropagation, dan aplikasi dalam bidang pendidikan. Kekuatan referensi terletak pada kebaruan (sebagian besar dalam 5 tahun terakhir) dan relevansi dengan topik penelitian. Namun, masih kurang referensi yang secara spesifik membahas aplikasi neural network untuk sistem beasiswa di Indonesia.
+
+% Comparative Analysis
+\section{ANALISIS KOMPARATIF}
+
+\subsection{Perbandingan Metodologi}
+
+Tabel \ref{tab:comparison} menunjukkan perbandingan komprehensif antara metode SAW dan Neural Network dalam konteks sistem pendukung keputusan bantuan pendidikan.
+
+\begin{table}[h]
+\centering
+\caption{Perbandingan Metode SAW dan Neural Network}
+\label{tab:comparison}
+\begin{tabular}{|p{3cm}|p{5.5cm}|p{5.5cm}|}
+\hline
+\textbf{Aspek} & \textbf{SAW} & \textbf{Neural Network} \\
+\hline
+Kompleksitas Implementasi & Sederhana, mudah diimplementasikan & Kompleks, memerlukan expertise khusus \\
+\hline
+Kebutuhan Data & Data minimal, dapat bekerja dengan dataset kecil & Memerlukan dataset besar untuk training optimal \\
+\hline
+Transparansi & Sangat transparan, setiap step dapat dijelaskan & Black box, sulit dijelaskan prosesnya \\
+\hline
+Akurasi & 85\% (dibandingkan manual) & 89.2\% (pada dataset testing) \\
+\hline
+Waktu Komputasi & Sangat cepat (2-3 detik untuk 100 data) & Training lama, prediksi cepat (0.002 detik) \\
+\hline
+Interpretabilitas & Tinggi, hasil mudah dipahami & Rendah, hasil sulit diinterpretasi \\
+\hline
+Maintenance & Mudah, hanya perlu update bobot & Kompleks, perlu retraining berkala \\
+\hline
+Biaya Implementasi & Rendah & Tinggi (infrastruktur, expertise) \\
+\hline
+\end{tabular}
+\end{table}
+
+Dari segi metodologi, SAW menggunakan pendekatan matematis sederhana yang mudah dipahami, sementara Neural Network menggunakan pendekatan machine learning yang lebih sophisticated. SAW mengandalkan normalisasi dan pembobotan linear, sedangkan Neural Network dapat menangkap hubungan non-linear yang kompleks antar variabel.
+
+\subsection{Kesesuaian Konteks Aplikasi}
+
+Analisis kesesuaian konteks aplikasi menunjukkan bahwa pemilihan metode harus disesuaikan dengan kondisi dan kebutuhan spesifik institusi:
+
+\textbf{SAW lebih cocok untuk:}
+\begin{itemize}
+    \item Institusi dengan sumber daya IT terbatas
+    \item Kasus dimana transparansi dan interpretabilitas sangat penting
+    \item Dataset dengan ukuran kecil hingga menengah
+    \item Situasi dimana stakeholder memerlukan penjelasan detail tentang proses keputusan
+    \item Implementasi cepat dengan biaya minimal
+\end{itemize}
+
+\textbf{Neural Network lebih cocok untuk:}
+\begin{itemize}
+    \item Institusi besar dengan dataset yang melimpah
+    \item Kasus dimana akurasi prediksi menjadi prioritas utama
+    \item Situasi dengan pola data yang kompleks dan non-linear
+    \item Organisasi yang memiliki tim IT dengan expertise machine learning
+    \item Aplikasi yang memerlukan adaptasi otomatis terhadap perubahan pola data
+\end{itemize}
+
+Faktor lain yang perlu dipertimbangkan adalah regulasi dan kebijakan institusi. Beberapa organisasi pemerintah mungkin mengharuskan transparansi penuh dalam proses pengambilan keputusan, yang lebih mudah dicapai dengan metode SAW.
+
+% Conclusion
+\section{KESIMPULAN}
+
+Berdasarkan kajian pustaka terhadap kedua penelitian sistem pendukung keputusan untuk bantuan pendidikan, dapat disimpulkan beberapa hal penting:
+
+\textbf{Temuan Utama:}
+\begin{enumerate}
+    \item Kedua metode (SAW dan Neural Network) terbukti efektif dalam meningkatkan objektivitas dan efisiensi proses seleksi bantuan pendidikan dibandingkan metode manual.
+    
+    \item Metode SAW menawarkan kesederhanaan implementasi dan transparansi tinggi dengan akurasi yang cukup baik (85\%), cocok untuk institusi dengan sumber daya terbatas.
+    
+    \item Metode Neural Network memberikan akurasi yang lebih tinggi (89.2\%) dan kemampuan menangkap pola kompleks, tetapi memerlukan investasi yang lebih besar dalam hal infrastruktur dan expertise.
+    
+    \item Tidak ada metode yang universal optimal; pemilihan bergantung pada konteks spesifik institusi.
+\end{enumerate}
+
+\textbf{Rekomendasi:}
+\begin{itemize}
+    \item Untuk institusi pendidikan menengah ke bawah dengan anggaran terbatas, disarankan menggunakan metode SAW sebagai solusi awal yang cost-effective.
+    
+    \item Untuk universitas besar atau institusi dengan dataset mahasiswa yang besar dan beragam, Neural Network dapat memberikan nilai tambah yang signifikan dalam hal akurasi prediksi.
+    
+    \item Implementasi hybrid yang menggabungkan transparansi SAW dengan akurasi Neural Network dapat menjadi solusi komprehensif untuk masa depan.
+\end{itemize}
+
+\textbf{Saran Penelitian Lanjutan:}
+\begin{itemize}
+    \item Pengembangan metode ensemble yang menggabungkan kelebihan SAW dan Neural Network
+    \item Penelitian tentang explainable AI untuk Neural Network dalam konteks sistem pendukung keputusan pendidikan
+    \item Studi komparatif dengan metode machine learning lain seperti Random Forest atau Support Vector Machine
+    \item Analisis dampak implementasi sistem terhadap tingkat kepuasan stakeholder dan efektivitas program bantuan pendidikan
+\end{itemize}
+
+Kajian ini memberikan kontribusi dalam pemahaman karakteristik dan aplikabilitas metode SAW dan Neural Network untuk sistem pendukung keputusan bantuan pendidikan, serta memberikan panduan praktis bagi institusi pendidikan dalam memilih metode yang paling sesuai dengan kondisi dan kebutuhan mereka.
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,267 @@
+\documentclass[10pt,a4paper]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage[bahasa]{babel} % Indonesian language support
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% Page setup
+\geometry{
+    a4paper,
+    left=3cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Line spacing
+\onehalfspacing
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont Kajian Pustaka Sistem Pendukung Keputusan}
+\fancyhead[R]{\fontsize{9}{11}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Title formatting
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Table of contents formatting
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black,
+    pdftitle={Kajian Pustaka Sistem Pendukung Keputusan untuk Bantuan Pendidikan},
+    pdfauthor={Nama Mahasiswa},
+    pdfsubject={Literature Review},
+    pdfkeywords={Sistem Pendukung Keputusan, Bantuan Pendidikan, SAW, Neural Network}
+}
+
+% Document information - EDIT THIS SECTION
+\title{
+    \vspace{-2cm}
+    \Huge\textbf{KAJIAN PUSTAKA}\\
+    \vspace{0.5cm}
+    \Large\textbf{SISTEM PENDUKUNG KEPUTUSAN}\\
+    \Large\textbf{UNTUK BANTUAN PENDIDIKAN}\\
+    \vspace{1cm}
+    \normalsize\textit{Literature Review on Decision Support Systems for Educational Aid}
+}
+
+\author{
+    \textbf{[NAMA LENGKAP MAHASISWA]}\\
+    \textbf{[NIM]}\\
+    \vspace{0.5cm}
+    \textbf{Program Studi [NAMA PROGRAM STUDI]}\\
+    \textbf{Fakultas [NAMA FAKULTAS]}\\
+    \textbf{Universitas [NAMA UNIVERSITAS]}\\
+    \vspace{1cm}
+    \today
+}
+
+\date{}
+
+\begin{document}
+
+% Title page
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% Table of contents
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% Start page numbering
+\setcounter{page}{1}
+
+% Introduction section
+\section{PENDAHULUAN}
+
+% TODO: Tuliskan pendahuluan kajian pustaka Anda di sini
+% Jelaskan:
+% - Latar belakang pentingnya sistem pendukung keputusan untuk bantuan pendidikan
+% - Tujuan kajian pustaka
+% - Ruang lingkup kajian
+% - Struktur penulisan
+
+% Paper 1 Section
+\section{KAJIAN PAPER 1: METODE SIMPLE ADDITIVE WEIGHTING}
+
+\subsection{Metode yang Digunakan}
+
+% TODO: Jelaskan metode Simple Additive Weighting (SAW) yang digunakan
+% Sertakan:
+% - Definisi dan konsep dasar SAW
+% - Langkah-langkah algoritma SAW
+% - Formula dan perhitungan yang digunakan
+% - Proses implementasi dalam konteks bantuan pendidikan
+
+\subsection{Dataset yang Digunakan}
+
+% TODO: Deskripsikan dataset yang digunakan dalam penelitian
+% Sertakan informasi tentang:
+% - Jumlah dan karakteristik sampel data
+% - Kriteria-kriteria yang digunakan untuk penilaian
+% - Bobot masing-masing kriteria
+% - Sumber data dan metode pengumpulan data
+% - Preprocessing data yang dilakukan
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+% TODO: Ringkas hasil eksperimen dan analisis
+% Sertakan:
+% - Hasil implementasi sistem
+% - Tingkat akurasi atau efektivitas sistem
+% - Perbandingan dengan metode manual (jika ada)
+% - Analisis performa sistem
+% - Tabel atau grafik hasil (jika diperlukan)
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item % TODO: Tuliskan kelebihan-kelebihan metode SAW
+    \item % TODO: Kemudahan implementasi
+    \item % TODO: Transparansi proses
+    \item % TODO: Dan lain-lain...
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item % TODO: Tuliskan kekurangan-kekurangan yang ditemukan
+    \item % TODO: Keterbatasan metode
+    \item % TODO: Masalah yang perlu diatasi
+    \item % TODO: Dan lain-lain...
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+% TODO: Analisis referensi-referensi utama yang digunakan dalam paper
+% Jelaskan relevansi dan kualitas referensi terhadap topik penelitian
+
+% Paper 2 Section
+\section{KAJIAN PAPER 2: METODE NEURAL NETWORK}
+
+\subsection{Metode yang Digunakan}
+
+% TODO: Jelaskan metode Neural Network yang digunakan
+% Sertakan:
+% - Arsitektur neural network yang digunakan
+% - Algoritma pembelajaran (training algorithm)
+% - Fungsi aktivasi yang dipilih
+% - Proses training dan testing
+% - Parameter-parameter yang digunakan
+
+\subsection{Dataset yang Digunakan}
+
+% TODO: Deskripsikan dataset untuk neural network
+% Sertakan:
+% - Karakteristik dan ukuran dataset
+% - Preprocessing data yang dilakukan
+% - Pembagian data training dan testing
+% - Fitur-fitur input yang digunakan
+% - Normalisasi atau transformasi data
+
+\subsection{Hasil Eksperimen dan Analisis}
+
+% TODO: Ringkas hasil eksperimen neural network
+% Sertakan:
+% - Hasil training neural network
+% - Tingkat akurasi prediksi
+% - Analisis confusion matrix (jika ada)
+% - Perbandingan performa dengan metode lain
+% - Grafik learning curve atau performa
+
+\subsection{Kelebihan dan Kekurangan}
+
+\subsubsection{Kelebihan}
+\begin{itemize}
+    \item % TODO: Kelebihan metode Neural Network
+    \item % TODO: Kemampuan menangani pola kompleks
+    \item % TODO: Akurasi prediksi yang tinggi
+    \item % TODO: Dan lain-lain...
+\end{itemize}
+
+\subsubsection{Kekurangan}
+\begin{itemize}
+    \item % TODO: Kekurangan yang ditemukan
+    \item % TODO: Kompleksitas implementasi
+    \item % TODO: Kebutuhan data training yang besar
+    \item % TODO: Dan lain-lain...
+\end{itemize}
+
+\subsection{Referensi yang Digunakan}
+
+% TODO: Analisis referensi-referensi utama dalam paper neural network
+% Jelaskan kualitas dan relevansi referensi
+
+% Comparative Analysis
+\section{ANALISIS KOMPARATIF}
+
+\subsection{Perbandingan Metodologi}
+
+% TODO: Bandingkan kedua metode
+% Buat tabel perbandingan yang mencakup:
+% - Kompleksitas implementasi
+% - Kebutuhan data dan preprocessing
+% - Transparansi proses pengambilan keputusan
+% - Akurasi dan reliabilitas hasil
+% - Waktu komputasi
+% - Kemudahan interpretasi
+
+\subsection{Kesesuaian Konteks Aplikasi}
+
+% TODO: Analisis kesesuaian masing-masing metode
+% Pertimbangkan faktor:
+% - Kemudahan penggunaan bagi stakeholder
+% - Kebutuhan interpretabilitas hasil
+% - Skalabilitas sistem
+% - Maintenance dan update sistem
+% - Biaya implementasi
+
+% Conclusion
+\section{KESIMPULAN}
+
+% TODO: Tuliskan kesimpulan kajian pustaka
+% Sertakan:
+% - Ringkasan temuan utama dari kedua penelitian
+% - Perbandingan efektivitas kedua metode
+% - Rekomendasi penggunaan metode berdasarkan konteks
+% - Kontribusi untuk bidang ilmu
+% - Saran untuk penelitian lanjutan
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
